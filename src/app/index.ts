@@ -1,12 +1,27 @@
-import {DetoxComponent} from './components/detox/detox.component';
-import {DetoxFormComponent} from './components/detox/detox_form.component';
+// App
+import {MyApp} from './app.component';
+// Components
+import { DetoxComponent } from './components/detox/detox.component';
 import { QuoteComponent } from './components/quote/quote.component';
+
+// Pages
+import { HomePage } from './pages/home/home';
+import { TabsPage } from './pages/tabs/tabs';
+import { DetoxFormPage } from './pages/detox/detox_form';
+
 export const CORE_DECLARATIONS = [
-  DetoxComponent, DetoxFormComponent, QuoteComponent
+  MyApp,
+  DetoxComponent,
+  QuoteComponent,
+  HomePage,
+  DetoxFormPage,
+  TabsPage
 ]
-
 export const CORE_ENTRIES = [
-  DetoxFormComponent
+      MyApp,
+      HomePage,
+      TabsPage,
+      DetoxFormPage,
 ]
 
-export {DetoxFormComponent}
+export {DetoxFormPage}
