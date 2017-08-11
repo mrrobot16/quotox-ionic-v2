@@ -9,7 +9,7 @@ export class SharedService {
   }
 
   getDetox(){
-
+    return this.http.get(END_POINTS.detoxes).map(res => res.json())
   }
 
   postDetox(){
@@ -18,14 +18,5 @@ export class SharedService {
 
   getQuotes(){
       return this.http.get(END_POINTS.quotes).map(res => res.json())
-  //   return fetch(END_POINTS.quotes).then( response => {
-  //   return response.json();
-  // }).then(response => {
-  //   return response;
-  // },logError)
   }
-}
-
-export function logError(error){
-  console.log('error: ', error)
 }
