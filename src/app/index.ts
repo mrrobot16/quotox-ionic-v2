@@ -9,6 +9,9 @@ import { HomePage } from './pages/home/home';
 import { TabsPage } from './pages/tabs/tabs';
 import { DetoxFormPage } from './pages/detox/detox_form';
 
+// Services
+import { SharedService } from './services/shared.service';
+
 export const CORE_DECLARATIONS = [
   MyApp,
   DetoxComponent,
@@ -24,4 +27,7 @@ export const CORE_ENTRIES = [
       DetoxFormPage,
 ]
 
+export const CORE_PROVIDERS = [
+  SharedService
+]
 export {DetoxFormPage}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { SharedService } from '../../services/shared.service';
 @Component({
   selector: 'quote-component',
   template: `
@@ -7,9 +7,10 @@ import { Component } from '@angular/core';
   `
 })
 export class QuoteComponent {
-
-  constructor() {
-
+  quotes:any;
+  constructor(private shared_service:SharedService) {
+    this.quotes = this.shared_service.getQuotes();
+    console.log('this.quotes: ', this.quotes)
   }
 
 }
