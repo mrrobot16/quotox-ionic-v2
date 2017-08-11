@@ -17,11 +17,12 @@ export class SharedService {
   }
 
   getQuotes(){
-    return fetch(END_POINTS.quotes).then( response => {
-    return response.json();
-  }).then(response => {
-    return response;
-  },logError)
+      return this.http.get(END_POINTS.quotes).map(res => res.json())
+  //   return fetch(END_POINTS.quotes).then( response => {
+  //   return response.json();
+  // }).then(response => {
+  //   return response;
+  // },logError)
   }
 }
 

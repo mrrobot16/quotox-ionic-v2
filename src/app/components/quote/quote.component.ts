@@ -1,16 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
 @Component({
   selector: 'quote-component',
   template: `
-  <h1>Quote Component</h1>
+  <div>
+      <p>Quote of the Day: {{ quoteOfDay }}</p>
+  </div>
   `
 })
-export class QuoteComponent {
+export class QuoteComponent implements OnInit {
   quotes:any;
+  quoteOfDay:string;
   constructor(private shared_service:SharedService) {
-    this.quotes = this.shared_service.getQuotes();
-    console.log('this.quotes: ', this.quotes)
+
+  }
+
+  ngOnInit(){
+    this.getQuotes();
+  }
+
+  getQuotes(){
+    let quotes = this.shared_service.getQuotes()
+    quotes.subscribe(data=>{
+      this.quotes=data
+      this.quoteOfDay = this.quotes[0].description
+    })
   }
 
 }
