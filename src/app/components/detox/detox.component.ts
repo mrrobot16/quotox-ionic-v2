@@ -3,11 +3,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'detox-component',
   template: `
-  <h1>Detox Component</h1>
+  <p>Days free 572</p>
   `
 })
 export class DetoxComponent {
-
   constructor() {
 
   }

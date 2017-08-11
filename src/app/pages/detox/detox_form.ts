@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   template: `
   <ion-header>
      <ion-navbar>
-       <ion-title>Time To Detox</ion-title>
+       <ion-title>Time to Detox</ion-title>
      </ion-navbar>
    </ion-header>
 
