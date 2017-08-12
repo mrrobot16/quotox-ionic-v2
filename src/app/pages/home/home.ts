@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 @Component({
   template: `
@@ -14,10 +14,6 @@ import { NavController } from 'ionic-angular';
   </ion-content>
   `
 })
-export class HomePage {
-
-  constructor(public navCtrl: NavController) {
-    console.log('navCtrl: ', navCtrl)
-  }
-
+export class HomePage{
+  constructor(public navCtrl: NavController) {}
 }

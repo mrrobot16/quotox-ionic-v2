@@ -9,7 +9,10 @@ import { Component } from '@angular/core';
    </ion-header>
 
   <ion-content padding>
-    <h1>DetoxForm Component</h1>
+    <div>
+      <h3>Time To Detox</h3>
+
+    </div>
   </ion-content>
   `
 })

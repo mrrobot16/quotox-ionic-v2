@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input,OnInit } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
+import {logError} from '../../helpers/helpers';
 @Component({
   selector: 'quote-component',
   template: `
@@ -9,7 +10,6 @@ import { SharedService } from '../../services/shared.service';
   `
 })
 export class QuoteComponent implements OnInit {
-  quotes:any;
   quoteOfDay:string;
   constructor(private shared_service:SharedService) {
 
@@ -22,9 +22,8 @@ export class QuoteComponent implements OnInit {
   getQuotes(){
     let quotes = this.shared_service.getQuotes()
     quotes.subscribe(data=>{
-      this.quotes=data
-      this.quoteOfDay = this.quotes[0].description
-    })
+      this.quoteOfDay = data[0].description
+    }, logError)
   }
 
 }
