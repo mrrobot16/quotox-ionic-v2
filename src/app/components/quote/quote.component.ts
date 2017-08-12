@@ -11,6 +11,7 @@ import {logError} from '../../helpers/helpers';
 })
 export class QuoteComponent implements OnInit {
   quoteOfDay:string;
+  @Input() quote;
   constructor(private shared_service:SharedService) {
 
   }

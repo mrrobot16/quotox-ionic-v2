@@ -14,6 +14,10 @@ import { NavController } from 'ionic-angular';
   </ion-content>
   `
 })
-export class HomePage{
+export class HomePage implements OnInit{
   constructor(public navCtrl: NavController) {}
+
+  ngOnInit(){
+
+  }
 }

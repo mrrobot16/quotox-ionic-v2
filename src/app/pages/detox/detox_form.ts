@@ -9,17 +9,29 @@ import { Component } from '@angular/core';
    </ion-header>
 
   <ion-content padding>
-    <div>
-      <h3>Time To Detox</h3>
-
+<form (submit)="postDetox()">
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Last Time</ion-label>
+      <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]='cleanDate' name='cleanDate'></ion-datetime>
+    </ion-item>
+    <div padding>
+      <button ion-button color="primary" block>Start Detox</button>
     </div>
+  </ion-list>
+</form>
   </ion-content>
   `
 })
 export class DetoxFormPage {
-
+  cleanDate:any;
+  detox:any;
   constructor() {
 
+  }
+
+  postDetox(){
+    console.log('detox ', this.cleanDate)
   }
 
 }
