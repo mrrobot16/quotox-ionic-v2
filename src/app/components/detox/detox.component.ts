@@ -9,6 +9,7 @@ import {logError} from '../../helpers/helpers';
 })
 export class DetoxComponent implements OnInit {
   daysFree:any;
+  @Input() detox;
   constructor(private shared_service: SharedService) {
 
   }
@@ -24,11 +25,11 @@ export class DetoxComponent implements OnInit {
     }, logError)
   }
 
-  getExactDate(date){
-    let real_date = date[date.length-1].last_time.split('-')
+  getExactDate(detox){
+    let real_date = detox[detox.length-1].last_time.split('-')
     let cleanDay:any = new Date(real_date[0]+'-'+real_date[1]+'-'+(parseInt(real_date[2])+1).toString())
     let today:any = new Date()
-    this.daysFree = Math.floor(((cleanDay-today)/(864*Math.pow(10,5))))*-1;
+    this.daysFree = Math.floor(((today-cleanDay)/(864*Math.pow(10,5))));
   }
 
 }
